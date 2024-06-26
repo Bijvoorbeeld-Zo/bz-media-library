@@ -43,7 +43,7 @@ class Upload extends Component implements HasForms
                         $media_library_item = MediaLibraryItem::create(['name' => $file->getClientOriginalName()]);
                         $media_library_item
                             ->addMedia($file->getPathname())
-                            ->toMediaCollection();
+                            ->toMediaCollection('images', 's3');
 
                         return $media_library_item->id;
                     })
