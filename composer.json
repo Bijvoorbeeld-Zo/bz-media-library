@@ -13,7 +13,7 @@
             "email": "jorn@bijvoorbeeldzo.nl"
         }
     ],
-    "minimum-stability": "dev",
+    "minimum-stability": "stable",
     "require": {
         "filament/support": "^3.0",
         "livewire/livewire": "^3.5",
