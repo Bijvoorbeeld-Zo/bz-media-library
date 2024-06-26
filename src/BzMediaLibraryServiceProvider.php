@@ -2,6 +2,8 @@
 
 namespace JornBoerema\BzMediaLibrary;
 
+use JornBoerema\BzMediaLibrary\Livewire\Upload;
+use Livewire\Livewire;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -19,4 +21,12 @@ class BzMediaLibraryServiceProvider extends PackageServiceProvider
                 $installCommand->publishMigrations();
             });
     }
+
+    public function boot()
+    {
+        parent::boot();
+
+        Livewire::component('jorn-boerema.bz-media-library.livewire.upload', Upload::class);
+    }
+
 }

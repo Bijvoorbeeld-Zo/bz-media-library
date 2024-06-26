@@ -20,7 +20,7 @@
 @endphp
 
 <x-filament-panels::page>
-    @livewire(\App\Livewire\Upload::class)
+    @livewire(\JornBoerema\BzMediaLibrary\Livewire\Upload::class)
 
     <div class="grid grid-cols-12 gap-10 items-start justify-start" x-data="{ selected: null, media: {{ json_encode($media) }} }">
         <div class="col-span-9 grid grid-cols-4 gap-5">

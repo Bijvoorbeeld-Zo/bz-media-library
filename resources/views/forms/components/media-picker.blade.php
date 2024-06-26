@@ -37,8 +37,6 @@
                     </x-filament::button>
                 </x-slot>
 
-                @livewire(\App\Livewire\Upload::class)
-
                 <div class="grid grid-cols-5 gap-5">
                     @foreach(\JornBoerema\BzMediaLibrary\Models\MediaLibraryItem::all() as $item)
                         <label for="media-{{ $item->id }}" class="relative cursor-pointer">
