@@ -34,16 +34,10 @@ class Upload extends Component implements HasForms
                     ->required()
                     ->multiple()
                     ->saveUploadedFileUsing(function (TemporaryUploadedFile $file, Get $get): int {
-                        $file = new UploadedFile(
-                            $file->getRealPath(),
-                            $file->getClientOriginalName(),
-                            $file->getMimeType()
-                        );
-
                         $media_library_item = MediaLibraryItem::create(['name' => $file->getClientOriginalName()]);
                         $media_library_item
-                            ->addMedia($file->getPathname())
-                            ->toMediaCollection('images', 's3');
+                            ->addMediaFromDisk($file->getRealPath(), config('media-library.disk_name'))
+                            ->toMediaCollection();
 
                         return $media_library_item->id;
                     })

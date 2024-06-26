@@ -2,6 +2,7 @@
     "name": "jornboerema/bz-media-library",
     "type": "library",
     "license": "MIT",
+    "version": "0.1",
     "autoload": {
         "psr-4": {
             "JornBoerema\\BzMediaLibrary\\": "src/"
