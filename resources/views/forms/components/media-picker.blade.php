@@ -2,7 +2,7 @@
     $mediaItems = \JornBoerema\BzMediaLibrary\Models\MediaLibraryItem::all()->map(function($item) {
         return [
             'id' => $item->id,
-            'url' => $item->getFirstMedia()->getUrl(),
+            'url' => $item->getFirstMedia()->getTemporaryUrl(\Carbon\Carbon::now()->addMinutes(5)),
         ];
     })->toArray();
 
@@ -42,7 +42,7 @@
                         <label for="media-{{ $item->id }}" class="relative cursor-pointer">
                             <input type="checkbox" id="media-{{ $item->id }}" value="{{ $item->id }}" x-model="selected"
                                    class="hidden peer"/>
-                            <img src="{{ $item->getFirstMedia()->getUrl() }}" alt=""
+                            <img src="{{ $item->getFirstMedia()->getTemporaryUrl(\Carbon\Carbon::now()->addMinutes(5)) }}" alt=""
                                  class="w-full h-full bg-primary-300 aspect-square rounded-md object-cover object-center ring-primary-600 peer-checked:ring-2 ring-offset-4"></img>
                         </label>
                     @endforeach
