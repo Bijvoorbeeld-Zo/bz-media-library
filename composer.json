@@ -1,0 +1,29 @@
+{
+    "name": "jornboerema/bz-media-library",
+    "type": "library",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "JornBoerema\\BzMediaLibrary\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jorn Boerema",
+            "email": "jorn@bijvoorbeeldzo.nl"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "filament/support": "^3.0",
+        "livewire/livewire": "^3.5",
+        "spatie/laravel-medialibrary": "^11.7"
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "JornBoerema\\BzMediaLibrary\\BzMediaLibraryServiceProvider"
+            ]
+        }
+    }
+}
