@@ -10,7 +10,7 @@ return new class extends Migration {
         Schema::create('media_library_items', function (Blueprint $table) {
             $table->id();
             $table->string('name');
-            $table->json('tags')->default('[]');
+            $table->json('tags')->nullable();
             $table->timestamps();
         });
     }
