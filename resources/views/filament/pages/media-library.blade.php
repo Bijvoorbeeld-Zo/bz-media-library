@@ -49,7 +49,7 @@
             <a :href="media.find(item => String(item.id) === String(selected)).url" target="_blank">
                 <x-filament::button color="gray" class="w-full mt-4">Bekijken</x-filament::button>
             </a>
-            <x-filament::button color="danger" class="w-full mt-2">Verwijder</x-filament::button>
+{{--            <x-filament::button color="danger" class="w-full mt-2">Verwijder</x-filament::button>--}}
         </div>
     </div>
 </x-filament-panels::page>
